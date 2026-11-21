@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Smart Mandi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="logo">M</span>Smart Mandi</a>
+    <nav id="nav"></nav>
+  </header>
+  <div id="flash"></div>
+  <main>
+  <section class="phone narrow">
+    <h1>Log in</h1>
+    <form id="loginForm">
+      <label>Phone number<input id="phone" inputmode="numeric" maxlength="10" required></label>
+      <label>Password<input id="password" type="password" required></label>
+      <button class="btn wide" type="submit">Log in</button>
+    </form>
+    <button class="btn ghost wide" id="demoBtn" type="button">Try demo farmer</button>
+    <p class="muted">New here? <a href="register.html">Create an account</a></p>
+  </section>
+  </main>
+  <footer>Prices shown are demo data, not live government prices.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

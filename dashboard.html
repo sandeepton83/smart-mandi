@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Smart Mandi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="logo">M</span>Smart Mandi</a>
+    <nav id="nav"></nav>
+  </header>
+  <div id="flash"></div>
+  <main>
+<div class="dash">
+  <aside class="phone" id="market">
+    <div class="bar"><h2>Markets</h2><button class="icon" id="refresh" title="Refresh prices">&#8635;</button></div>
+    <div id="marketList" class="mlist"></div>
+  </aside>
+
+  <section class="phone center">
+    <div class="who"><span class="avatar" id="avatar">F</span><span id="hiName">Hi</span><span class="loc" id="loc"></span></div>
+    <div id="cropName" class="cropname">Paddy / quintal</div>
+    <div class="bigrow"><div id="bigPrice" class="big">Rs 0</div><span id="bigBadge" class="badge up">0%</span></div>
+    <div class="pills" id="ranges">
+      <button class="pill on" data-range="14">2W</button><button class="pill" data-range="30">1M</button>
+      <button class="pill" data-range="60">2M</button><button class="pill" data-range="90">3M</button>
+    </div>
+    <div class="chartwrap"><svg id="chart" viewBox="0 0 360 260" preserveAspectRatio="none"></svg><div id="tip" class="tip" hidden></div></div>
+    <div class="botnav"><a class="nb" href="#market">Markets</a><a class="nb" href="#sellPanel">Sell</a><a class="nb" href="#assistant">Assistant</a><a class="nb" href="#history">History</a></div>
+  </section>
+
+  <aside class="phone" id="sellPanel">
+    <div class="toggle" id="modeToggle"><button class="on" data-mode="sell">SELL</button><button data-mode="hold">HOLD</button></div>
+    <div id="holdBox" hidden class="sub"><h3>Hold or sell?</h3><p id="advice" class="muted"></p></div>
+    <div id="sellBox">
+      <form id="compareForm">
+        <div class="sub"><div class="subhead"><span>Quantity</span><span>quintals</span></div>
+          <input id="qty" class="bigin" type="number" min="1" step="0.5" value="10">
+          <div class="chips2" data-for="qty"><button type="button" data-v="1">1</button><button type="button" data-v="5">5</button><button type="button" data-v="10">10</button><button type="button" data-v="25">25</button><button type="button" data-v="50">50</button></div></div>
+        <div class="sub"><div class="subhead"><span>Vehicle</span><span id="vehNote" class="tag">Cheapest</span></div>
+          <div class="seg" id="veh"><button type="button" class="on" data-veh="tractor">Tractor</button><button type="button" data-veh="truck">Mini truck</button><button type="button" data-veh="lorry">Lorry</button></div></div>
+        <div class="sub"><div class="subhead"><span>Max distance</span><span id="kmVal">150 km</span></div>
+          <input id="km" type="range" min="20" max="150" step="10" value="150"></div>
+        <div class="sub"><div class="subhead"><span>Minimum price</span><span>Rs / quintal</span></div>
+          <input id="minPrice" class="bigin" type="number" min="0" value="0">
+          <div class="chips2" id="minChips"><button type="button" data-f="0">Any</button><button type="button" data-f="1">Market</button><button type="button" data-f="1.02">+2%</button><button type="button" data-f="1.05">+5%</button></div></div>
+        <button class="btn wide" type="submit">Find best mandi</button>
+      </form>
+      <p id="compareError" class="error-text" hidden></p>
+    </div>
+  </aside>
+</div>
+
+<section class="phone" id="resultsCard" hidden>
+  <div class="bar"><h2>Best mandis for your crop</h2>
+    <div class="acts"><button class="pill" id="copyBtn">Copy summary</button><a class="pill" id="waBtn" target="_blank" rel="noopener">Share on WhatsApp</a></div></div>
+  <div class="table-wrap"><table id="results"><thead><tr><th>Mandi</th><th>Price</th><th>Distance</th><th>Transport</th><th>You take home</th></tr></thead><tbody></tbody></table></div>
+</section>
+
+<div class="two">
+  <section class="phone" id="assistant">
+    <h2>Assistant</h2>
+    <div id="chat" class="chat" aria-live="polite"><div class="msg bot">Ask me which mandi is best for your crop.</div></div>
+    <div class="chips2 quick" id="quick"><button type="button" data-q="Best mandi for cotton">Best for cotton</button><button type="button" data-q="How is transport calculated?">Transport cost</button><button type="button" data-q="Will it rain this week?">Weather</button></div>
+    <form id="chatForm" class="chatform">
+      <input id="chatInput" placeholder="Type or speak..." autocomplete="off">
+      <button type="button" id="micBtn" class="icon" title="Speak">&#127908;</button>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </section>
+  <section class="phone" id="history"><h2>Recent searches</h2><div id="historyList"></div></section>
+</div>
+  </main>
+  <footer>Prices shown are demo data, not live government prices.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
