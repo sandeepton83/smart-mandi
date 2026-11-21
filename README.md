@@ -1,10 +1,6 @@
 # Smart Mandi
 
 Smart Mandi helps farmers find where their crop sells for the most. Compare mandi prices, see candlestick price trends, subtract transport costs by vehicle and distance, and see the real take-home amount.
-
-**Live demo:** https://YOUR-SITE-NAME.netlify.app
-**Quick start for judges:** open the site and click **Try demo farmer**. No sign-up needed.
-
 ## The problem
 Farmers often sell at the nearest mandi without knowing whether a farther one would pay more after transport costs. Price information is scattered and hard to compare.
 
